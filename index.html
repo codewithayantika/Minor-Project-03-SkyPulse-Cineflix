@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkyPulse weather and Cineflix movie discovery apps.">
+  <title>SkyPulse & Cineflix | Minor Project 03</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">SKYPULSE <span>×</span> CINEFLIX</a>
+    <nav><a href="#weather">Weather</a><a href="#movies">Movies</a><a href="#about">About</a></nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div><p class="eyebrow">MINOR PROJECT 03 · JAVASCRIPT + REST APIS</p>
+        <h1>Good days start<br>with a little <em>discovery.</em></h1>
+        <p>Check the sky. Find your next favourite film.</p>
+        <div class="hero-actions"><a class="btn primary" href="#weather">Explore weather</a><a class="btn ghost" href="#movies">Browse movies</a></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><span class="spark s1">✦</span><span class="spark s2">✧</span></div>
+    </section>
+
+    <section id="weather" class="section weather-section">
+      <div class="section-heading"><div><p class="eyebrow">LIVE WEATHER</p><h2>SkyPulse</h2><p class="muted">A clear view of what's happening outside.</p></div><span class="live-pill">● LIVE FORECAST</span></div>
+      <form id="weather-form" class="search-bar">
+        <input id="city-input" type="search" placeholder="Enter a city (e.g. Kolkata)" aria-label="City name" required>
+        <button class="btn primary" type="submit">Check weather</button>
+        <button class="btn subtle" id="use-location" type="button">Use my location</button>
+      </form>
+      <p id="weather-message" class="status" aria-live="polite">Search for a city to see its current weather and 5-day outlook.</p>
+      <div id="current-weather" class="current-weather" hidden></div>
+      <div class="forecast-wrap"><h3>5-day outlook</h3><div id="forecast" class="forecast-grid"><p class="muted">Your forecast will appear here.</p></div></div>
+      <p class="data-note">Weather data provided by Open-Meteo. Forecasts are estimates and may change.</p>
+    </section>
+
+    <section id="movies" class="section movies-section">
+      <div class="section-heading"><div><p class="eyebrow">PICK YOUR NEXT WATCH</p><h2>Cineflix</h2><p class="muted">Stories worth staying in for.</p></div><span class="cine-mark">C</span></div>
+      <form id="movie-form" class="search-bar movie-search">
+        <input id="movie-input" type="search" placeholder="Search a movie title..." aria-label="Movie title" required>
+        <button class="btn movie-btn" type="submit">Search movies</button>
+      </form>
+      <div class="genre-row" id="genre-filters" aria-label="Filter by genre">
+        <button class="genre-chip active" data-genre="All">All</button><button class="genre-chip" data-genre="English">English</button><button class="genre-chip" data-genre="Hindi">Hindi</button><button class="genre-chip" data-genre="Bengali">Bengali</button><button class="genre-chip" data-genre="Cartoon">Cartoon</button>
+      </div>
+      <p id="movie-message" class="status" aria-live="polite">Browse the sample collection or search for a title.</p>
+      <div id="movie-grid" class="movie-grid"></div>
+      <p class="data-note">Search uses the OMDb API when you add your free API key in <code>config.js</code>. Sample titles and posters are included so the app works immediately.</p>
+    </section>
+
+    <section id="about" class="about-section">
+      <p class="eyebrow">ABOUT THIS PROJECT</p><h2>Built with curiosity<br>and a little code.</h2>
+      <p>SkyPulse and Cineflix demonstrate JavaScript modules, Fetch API, async/await, JSON handling, event listeners and responsive design.</p>
+    </section>
+  </main>
+  <footer><span>SkyPulse × Cineflix</span><span>Minor Project 03 · HTML · CSS · JavaScript</span></footer>
+
+  <dialog id="movie-dialog" class="movie-dialog">
+    <button class="dialog-close" id="close-dialog" aria-label="Close">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <script src="config.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
